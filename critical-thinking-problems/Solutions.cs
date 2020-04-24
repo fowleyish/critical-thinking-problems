@@ -5,9 +5,9 @@ using System.Text;
 
 namespace critical_thinking_problems
 {
-    class Solutions
+    class LoopSolutions
     {
-        // All solutions are in this class
+        // Loop solutions are in this class
 
 
 
@@ -35,9 +35,20 @@ namespace critical_thinking_problems
 
 
 
-        public void WhileLoopExample()
+        public void WhileLoopExample(int num)
         {
+            Console.Write("Enter the number 42: ");
+            int.TryParse(Console.ReadLine(), out num);
 
+            while (num != 42)
+            {
+                WhileLoopExample(num);
+            }
+
+            if (num == 42)
+            {
+                Console.WriteLine("Great!");
+            }
         }
     }
 }

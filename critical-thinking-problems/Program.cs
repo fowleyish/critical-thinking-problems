@@ -9,10 +9,17 @@ namespace critical_thinking_problems
             Console.WriteLine("Hello World!");
             Console.WriteLine("This program is built on some simple critical thinking problems.");
 
-            Solutions solution = new Solutions();
-            Console.Write("How many times would you like the loop to run?: ");
-            int.TryParse(Console.ReadLine(), out int result);
-            solution.ForLoopExample(result);
+            //LoopSolutions loop = new LoopSolutions();
+            //Console.Write("How many times would you like the for loop to run?: ");
+            //int.TryParse(Console.ReadLine(), out int result);
+            //solution.ForLoopExample(result);
+
+            //Console.Write("Where would you like the while loop to start? (MAX=24): ");
+            //int.TryParse(Console.ReadLine(), out int result);
+            //solution.WhileLoopExample(result);
+            //loop.WhileLoopExample(0);
+
+
         }
     }
 }
