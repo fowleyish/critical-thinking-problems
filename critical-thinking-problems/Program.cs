@@ -19,7 +19,8 @@ namespace critical_thinking_problems
             //solution.WhileLoopExample(result);
             //loop.WhileLoopExample(0);
 
-
+            CalculatorMadness calc = new CalculatorMadness();
+            calc.RunCalculations();
         }
     }
 }
