@@ -19,8 +19,11 @@ namespace critical_thinking_problems
             //solution.WhileLoopExample(result);
             //loop.WhileLoopExample(0);
 
-            CalculatorMadness calc = new CalculatorMadness();
-            calc.RunCalculations();
+            //CalculatorMadness calc = new CalculatorMadness();
+            //calc.RunCalculations();
+
+            Computer comp = new Computer();
+            comp.InstallApps();
         }
     }
 }

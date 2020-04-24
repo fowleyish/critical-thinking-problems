@@ -10,6 +10,10 @@ namespace critical_thinking_problems
         public double requiredEffectiveMemory;
 
         // Constructor
+        public Game(double gpuMem)
+        {
+            requiredEffectiveMemory = gpuMem;
+        }
 
         // Member methods
     }

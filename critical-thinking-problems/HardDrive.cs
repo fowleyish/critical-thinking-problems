@@ -16,8 +16,13 @@ namespace critical_thinking_problems
         {
             this.totalStorage = totalStorage;
             this.availableStorage = availableStorage;
+            applications = new List<Application>();
         }
 
         // Member methods
+        public void ConsumeStorage(double g)
+        {
+            availableStorage -= g;
+        }
     }
 }

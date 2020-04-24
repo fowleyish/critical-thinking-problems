@@ -18,17 +18,19 @@ namespace critical_thinking_problems
         }
 
         // Member methods
-        public void InstallApplication(TextEditor te, HardDrive hardDrive, RAM ram, Game game)
+        public void InstallApplication(TextEditor te, Game game, HardDrive hardDrive, RAM ram, GPU gpu)
         {
-            if (CheckRequirements(te, hardDrive, ram, game))
+            if (CheckRequirements(te, game, hardDrive, ram, gpu))
             {
                 if (te == null)
                 {
                     hardDrive.applications.Add(game);
+                    hardDrive.ConsumeStorage(game.requiredStorage);
                 }
-                else if (game == null)
+                else
                 {
                     hardDrive.applications.Add(te);
+                    hardDrive.ConsumeStorage(te.requiredStorage);
                 }
             }
             else
@@ -37,11 +39,11 @@ namespace critical_thinking_problems
             }
         }
 
-        public bool CheckRequirements(TextEditor te, HardDrive hardDrive, RAM ram, Game game)
+        public bool CheckRequirements(TextEditor te, Game game, HardDrive hardDrive, RAM ram, GPU gpu)
         {
-            if (te == null) 
+            if (te != null)
             {
-                if (ram.totalGigs >= app.requiredRAM && hardDrive.availableStorage >= app.requiredStorage)
+                if (ram.totalGigs >= te.requiredRAM && hardDrive.availableStorage >= te.requiredStorage)
                 {
                     return true;
                 }
@@ -50,29 +52,20 @@ namespace critical_thinking_problems
                     return false;
                 }
             }
-            else if (game == null)
+            else if (game != null)
             {
-                if (ram.totalGigs >= app.requiredRAM && hardDrive.availableStorage >= app.requiredStorage)
+                if (ram.totalGigs >= game.requiredRAM && hardDrive.availableStorage >= game.requiredStorage && gpu.effectiveMemory >= game.requiredEffectiveMemory)
                 {
                     return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             else
             {
                 return false;
-            }
-
-
-            if (ram.totalGigs >= app.requiredRAM && hardDrive.availableStorage >= app.requiredStorage)
-            {
-                if (game == null)
-                {
-                    return true;
-                }
-                else if (te == null)
-                {
-                    if ()
-                }
             }
         }
     }
