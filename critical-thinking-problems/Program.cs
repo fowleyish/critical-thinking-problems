@@ -12,7 +12,7 @@ namespace critical_thinking_problems
             Solutions solution = new Solutions();
             Console.Write("How many times would you like the loop to run?: ");
             int.TryParse(Console.ReadLine(), out int result);
-            solution.ForLoopExample1(result);
+            solution.ForLoopExample(result);
         }
     }
 }
